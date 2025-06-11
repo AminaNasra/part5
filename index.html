@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie List Manageer</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Movie List Manager</title>
   </head>
   <body>
     <!-- Page header section -->
@@ -30,7 +31,7 @@
         <!-- End Display Movie List -->
 
         <!-- Refresh button to update the displayed movie list -->
-        <button type="button">Refresh</button>
+        <button type="button" id="refresh-btn">Refresh</button>
       </section>
       <!-- End Display Movie List Section -->
 
@@ -40,9 +41,11 @@
         <h2>Sort Movies</h2>
         <!-- Sorting options -->
         <div class="input-group">
-          <button type="button" class="btn">Sort A-Z</button>
-          <button type="button" class="btn">Sort Z-A</button>
-          <button type="button" class="btn">Best Movies</button>
+          <button type="button" id="sort-az-btn" class="btn">Sort A-Z</button>
+          <button type="button" id="sort-za-btn" class="btn">Sort Z-A</button>
+          <button type="button" id="best-movies-btn" class="btn">
+            Best Movies
+          </button>
         </div>
       </section>
       <!-- End Sort Movie Section -->
@@ -55,7 +58,7 @@
         <form id="search-form">
           <div class="input-group">
             <input type="number" id="search-id" placeholder="Search by ID" />
-            <button type="button" class="btn">Search</button>
+            <button type="button" id="search-id-btn" class="btn">Search</button>
           </div>
           <div class="input-group">
             <input
@@ -63,7 +66,9 @@
               id="search-title"
               placeholder="Search by Title"
             />
-            <button type="button" class="btn">Search Title</button>
+            <button type="button" id="search-title-btn" class="btn">
+              Search Title
+            </button>
           </div>
         </form>
       </section>
@@ -93,7 +98,9 @@
               step="0.1"
               required
             />
-            <button type="button" class="btn">Add Movie</button>
+            <button type="button" id="add-movie-btn" class="btn">
+              Add Movie
+            </button>
           </div>
         </form>
       </section>
