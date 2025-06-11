@@ -40,14 +40,34 @@
         <h2>Sort Movies</h2>
         <!-- Sorting options -->
         <div class="input-group">
-          <button type="button">Sort A-Z</button>
-          <button type="button">Sort Z-A</button>
-          <button type="button">Best Movies</button>
+          <button type="button" class="btn">Sort A-Z</button>
+          <button type="button" class="btn">Sort Z-A</button>
+          <button type="button" class="btn">Best Movies</button>
         </div>
       </section>
       <!-- End Sort Movie Section -->
 
       <!-- Search Movie Section -->
+      <section id="search-movie" class="mb3 card">
+        <!-- Section heading -->
+        <h2>Search Movies</h2>
+        <!--Form to get search id and titile -->
+        <form id="search-form">
+          <div class="input-group">
+            <input type="number" id="search-id" placeholder="Search by ID" />
+            <button type="button" class="btn">Search</button>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="search-title"
+              placeholder="Search by Title"
+            />
+            <button type="button" class="btn">Search Title</button>
+          </div>
+        </form>
+      </section>
+
       <!-- End Search Movie Section -->
 
       <!-- Add A Movie Section  -->
