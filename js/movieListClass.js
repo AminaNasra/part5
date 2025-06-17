@@ -33,6 +33,7 @@ class MovieList {
       this.movieRow(movie.movieID, movie.title, movie.year, movie.rating);
     }
   }
+
   // removeElements - Remove all list elements from the DOM
   removeElements() {
     const rootElement = document.getElementById(this.rootId);
@@ -64,13 +65,28 @@ class MovieList {
     this.refresh();
   }
 
-  //  genMovieSearchList - Generate a movie list based on search results
-  genMovieSearchList(list) {
+  //genMovieSearchList - Generate a movie list based on search results
+  genMovieSearchListTitle(list) {
     // loop through the list
     for (let i = 0; i < list.length; i++) {
       let movie = list[i];
       // call the movieRow function to generate a row
       this.movieRow(movie.movieID, movie.title, movie.year, movie.rating);
+    }
+  }
+  genMovieSearchList(list) {
+    const resultElement = document.getElementById("search-results-list"); // Ensure results go in the right section
+
+    // Clear previous search results before displaying new ones
+    resultElement.innerHTML = "";
+
+    // Loop through the search results and add each movie
+    for (let i = 0; i < list.length; i++) {
+      let movie = list[i];
+      const row = document.createElement("li");
+      row.classList.add("row");
+      row.textContent = `#${movie.movieID} - ${movie.title} (${movie.year}) | Rating: ${movie.rating}`;
+      resultElement.appendChild(row);
     }
   }
 
@@ -89,27 +105,39 @@ class MovieList {
       }
     }
     this.removeElements();
-    this.genMovieSearchList(shortList);
+    if (shortList.length > 0) {
+      this.genMovieSearchListTitle(shortList); // Updates `#movieList`
+    } else {
+      //  Ensure "No result" appears in `#movieList`
+      const rootElement = document.getElementById("movieList");
+      const message = document.createElement("li");
+      message.classList.add("row");
+      message.textContent = "No result";
+      rootElement.appendChild(message);
+    }
   }
 
-  // searchByID - search the movies list based on ID
   searchByID(movieID) {
-    // Create an empty array to store search results
     let shortList = [];
-
-    // Loop through the movie list and find matches
     for (let i = 0; i < this.movieList.length; i++) {
       let movie = this.movieList[i];
-
-      // If the movie ID matches, add it to shortList
       if (movie.movieID === parseInt(movieID)) {
         shortList.push(movie);
       }
     }
-    // Clear previous search results
-    this.removeElements();
+    // Clear only search results, NOT the main movie list
+    document.getElementById("search-results-list").innerHTML = "";
+
     // Display search results
-    this.genMovieSearchList(shortList);
+    if (shortList.length > 0) {
+      this.genMovieSearchList(shortList);
+    } else {
+      const rootElement = document.getElementById("search-results-list");
+      const message = document.createElement("li");
+      message.classList.add("row");
+      message.textContent = "0 result";
+      rootElement.appendChild(message);
+    }
   }
 
   // sortA2Z - sort the list in ascending order display the movies
