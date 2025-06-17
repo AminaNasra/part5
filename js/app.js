@@ -24,6 +24,19 @@ console.log(movieList);
 
 // Event Functions
 
+// Sort A-Z Click Event
+function a2ZClick() {
+  movieList.sortAtoZ();
+}
+// Sort Z-A Click Event
+function z2aClick() {
+  movieList.sortZtoA();
+}
+// Best Movies Click Event
+function bestMoviesClick() {
+  movieList.bestMovies();
+}
+
 //  Search by Title Click Event
 function searchClick() {
   // get the text element from the dom
@@ -37,4 +50,9 @@ function searchClick() {
 function searchByIDClick() {
   let id = document.getElementById("search-id").value;
   movieList.searchByID(id);
+}
+
+// Refresh List Click Event
+function refreshClick() {
+  movieList.refresh();
 }

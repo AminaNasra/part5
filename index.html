@@ -33,7 +33,14 @@
         <!-- End Display Movie List -->
 
         <!-- Refresh button to update the displayed movie list -->
-        <button type="button" id="refresh-btn" class="btn">Refresh</button>
+        <button
+          type="button"
+          id="refresh-btn"
+          class="btn"
+          onclick="refreshClick()"
+        >
+          Refresh
+        </button>
       </section>
       <!-- End Display Movie List Section -->
 
@@ -43,9 +50,28 @@
         <h2>Sort Movies</h2>
         <!-- Sorting options -->
         <div class="input-group">
-          <button type="button" id="sort-az-btn" class="btn">Sort A-Z</button>
-          <button type="button" id="sort-za-btn" class="btn">Sort Z-A</button>
-          <button type="button" id="best-movies-btn" class="btn">
+          <button
+            type="button"
+            id="sort-az-btn"
+            class="btn"
+            onclick="a2ZClick()"
+          >
+            Sort A-Z
+          </button>
+          <button
+            type="button"
+            id="sort-za-btn"
+            class="btn"
+            onclick="z2aClick()"
+          >
+            Sort Z-A
+          </button>
+          <button
+            type="button"
+            id="best-movies-btn"
+            class="btn"
+            onclick="bestMoviesClick()"
+          >
             Best Movies
           </button>
         </div>
