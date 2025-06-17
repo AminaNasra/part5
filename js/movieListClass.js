@@ -17,8 +17,9 @@ class MovieList {
     const row = document.createElement("li");
     // Create the text and add the class to the new li.
     row.classList.add("row");
-    row.textContent = `#${movieID} - ${title} (${year}) | Rating: ${rating}`;
-
+    // Ensure rating always has one decimal place
+    const formattedRating = rating.toFixed(1);
+    row.textContent = `#${movieID} - ${title} (${year}) | Rating: ${formattedRating}`;
     // Add the new element to DOM.
     rootElement.appendChild(row);
   }
