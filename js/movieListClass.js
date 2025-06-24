@@ -76,10 +76,8 @@ class MovieList {
   }
   genMovieSearchList(list) {
     const resultElement = document.getElementById("search-results-list"); // Ensure results go in the right section
-
     // Clear previous search results before displaying new ones
     resultElement.innerHTML = "";
-
     // Loop through the search results and add each movie
     for (let i = 0; i < list.length; i++) {
       let movie = list[i];
